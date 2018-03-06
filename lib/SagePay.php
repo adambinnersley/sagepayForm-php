@@ -519,7 +519,7 @@ class SagePay {
         return openssl_decrypt(pack('H*', substr($strIn, 1)), 'AES-128-CBC', $this->encryptPassword, OPENSSL_RAW_DATA, $this->encryptPassword);
     }
 
-    protected function pkcs5_pad($text, $blocksize)	{
+    protected function pkcs5_pad($text, $blocksize) {
         $pad = $blocksize - (strlen($text) % $blocksize);
         return $text . str_repeat(chr($pad), $pad);
     }
