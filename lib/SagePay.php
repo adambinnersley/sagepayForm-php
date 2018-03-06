@@ -6,6 +6,7 @@
  * @copyright Copyright (c) 2013, Timur Olzhabayev
  * @license   http://www.opensource.org/licenses/mit-license.php
  */
+namespace SagePay;
  
 class SagePay {
 
@@ -50,7 +51,7 @@ class SagePay {
     protected $referrerID;
     protected $language;
     protected $website;
-    protected $encryptPassword = "PUTYOURPASSWORDHERE";
+    protected $encryptPassword;
 
     public function __construct() {
         $this->setVendorTxCode($this->createVendorTxCode());
@@ -116,6 +117,20 @@ class SagePay {
     public function getVendorTxCode() {
         return $this->vendorTxCode;
     }
+    
+    public function setVendorName($name) {
+        $this->vendorName = $name;
+        return $this;
+    }
+    
+    public function getVendorName() {
+        return $this->vendorName;
+    }
+    
+    public function setEncryptionPassword() {
+        $this->encryptPassword;
+        return $this;
+    }
 
     public function setAmount($amount) {
         $this->amount = number_format($amount, 2);
@@ -165,6 +180,7 @@ class SagePay {
     public function getCustomerName() {
         return $this->customerName;
     }
+    
     public function setCustomerName($name) {
         $this->customerName = $name;
         return $this;
@@ -191,6 +207,7 @@ class SagePay {
     public function getSendEMail() {
         return $this->sendEMail;
     }
+    
     public function setSendEMail($sendEmail = 1) {
         $this->sendEMail = $sendEmail;
         return $this;
@@ -202,7 +219,6 @@ class SagePay {
 
     public function setEMailMessage($emailMessage) {
         $this->eMailMessage = $emailMessage;
-
         return $this;
     }
 
@@ -295,7 +311,6 @@ class SagePay {
     public function getDeliverySurname() {
         return $this->deliverySurname;
     }
-
 
     public function setDeliveryFirstnames($firstnames) {
         $this->deliveryFirstnames = $firstnames;
@@ -405,7 +420,6 @@ class SagePay {
         return $this->apply3DSecure;
     }
 
-
     public function setBillingAgreement ($billingAgreement = 0) {
         $this->billingAgreement = $billingAgreement;
         return $this;
@@ -460,7 +474,6 @@ class SagePay {
         return $this->referrerID;
     }
 
-
     public function setLanguage ($language) {
         $this->language = $language;
         return $this;
@@ -470,7 +483,6 @@ class SagePay {
         return $this->language;
     }
 
-
     public function setWebsite ($website) {
         $this->website = $website;
         return $this;
@@ -479,7 +491,6 @@ class SagePay {
     public function getWebsite() {
         return $this->website;
     }
-
 
     public function setDeliverySameAsBilling() {
         $this->setDeliverySurname($this->getBillingSurname());
@@ -493,7 +504,6 @@ class SagePay {
         $this->setDeliveryPhone($this->getBillingPhone());
         return $this;
     }
-
 
     public function decode($strIn) {
         $decodedString =  $this->decodeAndDecrypt($strIn);

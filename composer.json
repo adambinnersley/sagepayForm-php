@@ -3,7 +3,17 @@
     "description": "A simple PHP class to integrate sagepayForm v3.00 into your website.",
     "type": "library",
     "license": "MIT",
+    "require-dev": {
+        "phpunit/phpunit": "^7.0"
+    },
     "autoload": {
-        "files": ["lib/SagePay.php"]
+        "psr-4": {
+            "SagePay\\": "lib/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "SagePay\\Tests\\": "tests/"
+        }
     }
 }
