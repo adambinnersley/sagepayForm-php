@@ -138,8 +138,8 @@ class SagePay {
         return $this->vendorName;
     }
     
-    public function setEncryptionPassword() {
-        $this->encryptPassword;
+    public function setEncryptionPassword($password) {
+        $this->encryptPassword = $password;
         return $this;
     }
 
