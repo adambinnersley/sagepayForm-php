@@ -98,7 +98,6 @@ class SagePay {
         $cryptString.= '&CustomerXML='.$this->getCustomerXML();
         $cryptString.= '&SurchargeXML='.$this->getSurchargeXML();
         $cryptString.= '&VendorData='.$this->getVendorData();
-        $cryptString.= '&ReferrerID='.$this->getReferrerID();
         $cryptString.= '&Language='.$this->getLanguage();
         $cryptString.= '&Website='.$this->getWebsite();
         return $this->encryptAndEncode($cryptString);
