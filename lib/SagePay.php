@@ -11,6 +11,7 @@ namespace SagePay;
 class SagePay {
 
     protected $vendorTxCode;
+    protected $purchaseURL;
     protected $amount;
     protected $currency;
     protected $description;
@@ -107,6 +108,17 @@ class SagePay {
         $timestamp = date("y-m-d-H-i-s", time());
         $random_number = rand(0,32000)*rand(0,32000);
         return "{$timestamp}-{$random_number}";
+    }
+    
+    public function setPurchaseURL($url = 'LIVE'){
+        if($url == 'TEST'){$this->purchaseURL = "https://test.sagepay.com/gateway/service/vspform-register.vsp";}
+        elseif($url == 'SIMULATOR'){$this->purchaseURL = "https://test.sagepay.com/simulator/vspformgateway.asp";}
+        else{$this->purchaseURL = "https://live.sagepay.com/gateway/service/vspform-register.vsp";}
+        return $this;
+    }
+    
+    public function getPurchaseURL(){
+        return $this->purchaseURL;
     }
 
     public function setVendorTxCode($code) {
