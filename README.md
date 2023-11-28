@@ -26,7 +26,7 @@ $sagePay->setSuccessURL('https://www.yoururl.com/success.php');
 $sagePay->setFailureURL('https://www.yoururl.org/fail.php');
 ?>
 
-<form method="POST" id="SagePayForm" action="*https://test.sagepay.com/gateway/service/vspform-register.vsp*">
+<form method="POST" id="SagePayForm" action="*https://live.opayo.eu.elavon.com/gateway/service/vspform-register.vsp*">
 	<input type="hidden" name="VPSProtocol" value= "3.00">
 	<input type="hidden" name="TxType" value= "PAYMENT">
 	<input type="hidden" name="Vendor" value= "*YOURVERNODID*">
