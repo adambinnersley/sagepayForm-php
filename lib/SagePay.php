@@ -110,9 +110,8 @@ class SagePay {
     }
     
     public function setPurchaseURL($url = 'LIVE'){
-        if($url == 'TEST'){$this->purchaseURL = "https://test.sagepay.com/gateway/service/vspform-register.vsp";}
-        elseif($url == 'SIMULATOR'){$this->purchaseURL = "https://test.sagepay.com/simulator/vspformgateway.asp";}
-        else{$this->purchaseURL = "https://live.sagepay.com/gateway/service/vspform-register.vsp";}
+        if($url == 'TEST'){$this->purchaseURL = "https://sandbox.opayo.eu.elavon.com/gateway/service/vspform-register.vsp";}
+        else{$this->purchaseURL = "https://live.opayo.eu.elavon.com/gateway/service/vspform-register.vsp";}
         return $this;
     }
     
